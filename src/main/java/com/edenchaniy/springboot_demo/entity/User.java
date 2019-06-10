@@ -2,7 +2,7 @@ package com.edenchaniy.springboot_demo.entity;
 
 public class User {
     private int id;
-    private String name;
+    private String username;
     private String password;
 
     public int getId() {
@@ -14,11 +14,11 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.username = name;
     }
 
     public String getPassword() {

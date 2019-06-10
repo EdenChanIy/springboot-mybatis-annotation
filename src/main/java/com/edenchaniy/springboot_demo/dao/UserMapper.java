@@ -10,19 +10,9 @@ import java.util.List;
 public interface UserMapper {
 
     @Select("SELECT * FROM user")
-    @Results({
-            @Result(property = "id", column = "id"),
-            @Result(property = "name", column = "username"),
-            @Result(property = "password", column = "password")
-    })
     List<User> findList();
 
-    @Select("SELECT * FROM user WHERE id=#{id}")
-    @Results({
-            @Result(property = "id", column = "id"),
-            @Result(property = "name", column = "username"),
-            @Result(property = "password", column = "password")
-    })
+    @Select("SELECT id, name, password FROM user WHERE id=#{id}")
     User findListById(int id);
 
     @Insert("INSERT INTO user(username, password) VALUES(#{name}, #{password})")
